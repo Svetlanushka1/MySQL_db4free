@@ -1,0 +1,92 @@
+add dependencies {
+        implementation 'org.testng:testng:7.4.0'
+        implementation 'mysql:mysql-connector-java:8.0.28'
+
+/////////////////////////////////////////////////////////////////////
+
+CREATE DATABASE my_db;
+CREATE DATABASE IF NOT EXISTS my_db;
+SHOW DATABASES;
+USE my_another_db;
+
+////////////////////////////////////////////////////////////////////////////
+How to create new table in db
+-- create a table Companies with name, id, address, email, and phone number:
+
+CREATE TABLE Companies (
+  id int,
+  name varchar(50),
+  address text,
+  email varchar(50),
+  phone varchar(10)
+);
+////////////////
+-- create a Companies table if it does not exist:
+
+CREATE TABLE IF NOT EXISTS Companies (
+  id int,
+  name varchar(50),
+  address text,
+  email varchar(50),
+  phone varchar(10)
+);
+//////////////////
+-- create Colleges table with primary key college_id:
+
+CREATE TABLE Colleges (
+  college_id INT,
+  college_code VARCHAR(20) NOT NULL,
+  college_name VARCHAR(50),
+  CONSTRAINT CollegePK PRIMARY KEY (college_id)
+);
+//////////////
+-- create Colleges table with primary key college_id:
+
+CREATE TABLE Colleges (
+  college_id INT,
+  college_code VARCHAR(20) NOT NULL,
+  college_name VARCHAR(50),
+  CONSTRAINT CollegePK PRIMARY KEY (college_id)
+);
+
+//////////////////////////////////////////////////////////////
+How to DROP database:
+DROP DATABASE my_db;
+
+-- delete Orders table if it exists
+DROP TABLE IF EXISTS Orders;
+
+//////////////////////////////////////////////////////////////
+How to ALTER table
+In SQL, the ALTER TABLE command is used to modify the structure of an existing table like adding, deleting, renaming columns, etc.
+
+-- add phone column to Customers table:
+
+ALTER TABLE Customers
+ADD phone varchar(10);
+ALTER TABLE Operations
+
+We can perform the following operations on a table using the ALTER TABLE command:
+Add a column
+Rename a column
+Modify a column
+Delete a column
+Rename a table
+
+-- add phone and age columns to Customers table:
+ALTER TABLE Customers
+ADD phone varchar(10), age int;
+
+-- rename column customer_id to c_id:
+ALTER TABLE Customers
+RENAME COLUMN customer_id TO c_id;
+ALTER TABLE Customers
+MODIFY COLUMN age VARCHAR(2);
+
+-- delete country column from Customers table:
+ALTER TABLE Customers
+DROP COLUMN country;
+
+-- rename Customers table to New_customers:
+ALTER TABLE Customers
+RENAME TO New_customers;

@@ -4,9 +4,14 @@ add dependencies {
 
 /////////////////////////////////////////////////////////////////////
 
-CREATE DATABASE my_db;
 CREATE DATABASE IF NOT EXISTS my_db;
 SHOW DATABASES;
+ showDatabases(connection);
+            showTables(connection);
+            insertData(connection, db_name, "oleg" + db_name, "sher" + db_name);
+            selectData(connection, db_name);
+
+            connection.close();
 USE my_another_db;
 
 ////////////////////////////////////////////////////////////////////////////

@@ -11,7 +11,7 @@ public class ShowDB_tests {
             String user = "telran40";
             String password = "telran40";
 
-
+//TODO check is password correct?
             try {
                 //Load the JDBC driver
                 Class.forName("com.mysql.cj.jdbc.Driver");
